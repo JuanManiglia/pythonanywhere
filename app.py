@@ -20,7 +20,7 @@ def git_update():
 @app.route('/', methods=['GET'])
 def index():
 
-    return 'mi primera Web cutre.... Soy Juan Maniglia....'
+    return 'mi primera Web cutre.... Soy Juan Maniglia.... al fin'
 
 @app.route('/v2/', methods=['GET'])
 def otra():
