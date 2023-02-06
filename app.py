@@ -8,7 +8,7 @@ app.config['DEBUG'] = True
 @app.route('/', methods=['GET'])
 def index():
 
-    return 'mi primera Web cutre.... Soy Juan Maniglia blablabla'
+    return 'mi primera Web cutre.... Soy Juan Maniglia'
 
 @app.route('/v2/', methods=['GET'])
 def otra():
