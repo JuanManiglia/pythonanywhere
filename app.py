@@ -1,9 +1,21 @@
 from flask import Flask, redirect, url_for, flash, request, jsonify
 import pickle
+import git
 
 
 app = Flask(__name__)
 app.config['DEBUG'] = True
+
+# Route for the GitHub webhook
+
+@app.route('/git_update', methods=['POST'])
+def git_update():
+    repo = git.Repo('./pythonanywhere')
+    origin = repo.remotes.origin
+    repo.create_head('main',
+                     origin.refs.main).set_tracking_branch(origin.refs.main).checkout()
+    origin.pull()
+    return '', 200
 
 @app.route('/', methods=['GET'])
 def index():
